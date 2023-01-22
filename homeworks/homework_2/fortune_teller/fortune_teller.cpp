@@ -8,7 +8,7 @@
 #include <map>
 
 int main() {
-    std::cout << "Welcome to the fortune teller program! \n";
+    std::cout << "Welcome to the fortune teller program!\n";
     std::cout << "Please enter your name:\n";
     // input[0]: name
     std::string name;
@@ -17,7 +17,7 @@ int main() {
     std::string time;
     std::vector<std::string> time_of_year {"spring", "summer", "autumn", "winter"};
 
-    std::cout << "Please enter the time of year when you were born: \n" <<
+    std::cout << "Please enter the time of year when you were born:\n" <<
                     "(pick from 'spring', 'summer', 'autumn', 'winter')" << std::endl;
     std::cin >> time;
     assert(std::count(time_of_year.begin(), time_of_year.end(), time));
