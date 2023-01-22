@@ -28,7 +28,7 @@ int main() {
     int count = 0;
 
     while (count < 5) {
-        std::cout << "Please provide the next guess:\n";
+        std::cout << "Please provide the next guess: ";
         std::cin >> guess;
         count++;
         if (guess < generated_number) {
