@@ -2,14 +2,14 @@
 // Created by vuong on 1/25/23.
 //
 
-#ifndef NO_STRINGS_ATTACHED_TRIM_STRING_H
-#define NO_STRINGS_ATTACHED_TRIM_STRING_H
+#ifndef NO_STRINGS_ATTACHED_STRING_TRIM_H
+#define NO_STRINGS_ATTACHED_STRING_TRIM_H
 
 #include <string>
 namespace no_strings_attached {
-    class trim_string {
+    class string_trim {
     public:
-        trim_string() = default;
+        string_trim() = default;
         enum class Side {
             kLeft,
             kRight,
@@ -23,4 +23,4 @@ namespace no_strings_attached {
     };
 }// namespace no_strings_attached
 
-#endif//NO_STRINGS_ATTACHED_TRIM_STRING_H
+#endif//NO_STRINGS_ATTACHED_STRING_TRIM_H

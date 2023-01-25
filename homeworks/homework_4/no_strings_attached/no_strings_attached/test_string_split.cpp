@@ -2,7 +2,7 @@
 // Created by vuong on 1/25/23.
 //
 
-#include "split_string.h"
+#include "string_split.h"
 #include <gtest/gtest.h>
 // TEST is a macro, i.e., preprocessor replaces it with some code
 
@@ -10,14 +10,14 @@ using namespace no_strings_attached;
 
 TEST(SplitValidationTest, SplitDelimeterNotFound) {
     auto test_string = "";
-    const auto split_on_empty = split_string::Split("", " ");
+    const auto split_on_empty = string_split::Split("", " ");
     std::cout <<  split_on_empty.size() << std::endl;
     ASSERT_FALSE(split_on_empty.empty())
             << "Failed to split: '" << test_string << "'";
     EXPECT_EQ("", split_on_empty.front())
             << "Failed to split: '" << test_string << "'";
     test_string = "hello";
-    const auto split_no_space = split_string::Split(test_string, " ");
+    const auto split_no_space = string_split::Split(test_string, " ");
     ASSERT_FALSE(split_no_space.empty())
             << "Failed to split: '" << test_string << "'";
     EXPECT_EQ("hello", split_no_space.front())
@@ -26,7 +26,7 @@ TEST(SplitValidationTest, SplitDelimeterNotFound) {
 
 TEST(SplitValidationTest, SplitTwoWordsOnString) {
     const auto test_string = "hello world";
-    const auto split = split_string::Split(test_string, " ");
+    const auto split = string_split::Split(test_string, " ");
     ASSERT_EQ(2UL, split.size()) << "Failed to split: '" << test_string << "'";
     EXPECT_EQ("hello", split.front())
             << "Failed to split: '" << test_string << "'";
@@ -36,7 +36,7 @@ TEST(SplitValidationTest, SplitTwoWordsOnString) {
 
 TEST(SplitValidationTest, SplitMoreWords) {
     const auto test_string = "some_string__split__with_underscores";
-    const auto split = split_string::Split(test_string, "__");
+    const auto split = string_split::Split(test_string, "__");
     ASSERT_EQ(3UL, split.size()) << "Failed to split: '" << test_string << "'";
     EXPECT_EQ("some_string", split[0])
             << "Failed to split: '" << test_string << "'";
@@ -47,7 +47,7 @@ TEST(SplitValidationTest, SplitMoreWords) {
 
 TEST(SplitValidationTest, RepeatedString) {
     const auto test_string = "split_me__and_me";
-    const auto split = split_string::Split(test_string, "_");
+    const auto split = string_split::Split(test_string, "_");
     ASSERT_EQ(5UL, split.size()) << "Failed to split: '" << test_string << "'";
     EXPECT_EQ("split", split[0]) << "Failed to split: '" << test_string << "'";
     EXPECT_EQ("me", split[1]) << "Failed to split: '" << test_string << "'";

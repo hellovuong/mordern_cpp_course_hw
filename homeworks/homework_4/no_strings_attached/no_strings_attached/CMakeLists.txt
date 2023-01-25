@@ -1,13 +1,13 @@
-add_library(tools split_string.cpp
-        split_string.h
-        trim_string.cpp
-        trim_string.h)
+add_library(tools string_split.cpp
+        string_split.h
+        string_trim.cpp
+        string_trim.h)
 target_link_libraries(tools PUBLIC cxx_setup)
 if (BUILD_TESTING)
-    add_executable(trim_string_test trim_string_test.cpp)
+    add_executable(trim_string_test test_string_trim.cpp)
     target_link_libraries(trim_string_test PRIVATE tools GTest::gtest_main)
 
-    add_executable(split_string_test split_string_test.cpp)
+    add_executable(split_string_test test_string_split.cpp)
     target_link_libraries(split_string_test PRIVATE tools GTest::gtest_main)
 
     include(GoogleTest)
