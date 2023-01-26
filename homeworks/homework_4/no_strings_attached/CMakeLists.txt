@@ -7,9 +7,6 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 
-# Enable testing for this project
-include(CTest)
-
 add_library(cxx_setup INTERFACE)
 target_compile_options(cxx_setup
         INTERFACE -Wall -Wpedantic -Wextra)
@@ -19,6 +16,9 @@ target_include_directories(cxx_setup
 
 # Update the submodules here
 include(external/UpdateSubmodules.cmake)
+
+# Enable testing for this project
+include(CTest)
 
 # 🚨 Make sure CMakeLists.txt file exists in the subdirectories!
 add_subdirectory(external)

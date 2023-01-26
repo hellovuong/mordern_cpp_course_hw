@@ -2,9 +2,9 @@
 // Created by vuong on 1/25/23.
 //
 
-#include "split_string.h"
+#include "string_split.h"
 namespace no_strings_attached {
-    std::vector<std::string> split_string::Split(const std::string &str, const std::string &delimiter) {
+    std::vector<std::string> Split(const std::string &str, const std::string &delimiter) {
         //std::cout << " Debug : function entry "<<std::endl;
 
         size_t next_start = delimiter.size();
@@ -78,7 +78,7 @@ namespace no_strings_attached {
         }
     }
 
-    [[maybe_unused]] std::vector<std::string> split_string::Split(const std::string &str, const std::string &delimiter, int number_of_chunks_to_keep) {
+    [[maybe_unused]] std::vector<std::string> Split(const std::string &str, const std::string &delimiter, int number_of_chunks_to_keep) {
         auto result = Split(str, delimiter);
         result.resize(number_of_chunks_to_keep);
         return result;
